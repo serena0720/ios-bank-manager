@@ -26,11 +26,11 @@
 
 `BankClerk`이 업무 처리를 도와드릴 겁니다!
 
-    > **핵심 개념 및 경험**
-    > - LinkedList를 이용한 Queue 구현
-    > - Queue의 UnitTest 구현
-    > - GCD를 이용한 Concurrency 프로그래밍
-    > - Opaque and Boxed Types을 활용하여 Queue의 추상화
+> **핵심 개념 및 경험**
+> - LinkedList를 이용한 Queue 구현
+> - Queue의 UnitTest 구현
+> - GCD를 이용한 Concurrency 프로그래밍
+> - Opaque and Boxed Types을 활용하여 Queue의 추상화
 
 <br>
 
