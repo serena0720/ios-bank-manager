@@ -18,17 +18,19 @@
 
 ## 1. 📢 소개
 
-*Dear. `Console-App User Customer`*
+#### *Dear. `Console-App User Customer`*
 
 `Bank`에 업무를 보러 오셨나요? *CommandLine*에 원하시는 메뉴를 선택해주세요!
+
 저희 `BankManager`에게 대기번호를 받으시고 대기해주세요.
+
 `BankClerk`이 업무 처리를 도와드릴 겁니다!
-    
-> **핵심 개념 및 경험**
-> - LinkedList를 이용한 Queue 구현
-> - Queue의 UnitTest 구현
-> - GCD를 이용한 Concurrency 프로그래밍
-> - Opaque and Boxed Types을 활용하여 Queue의 추상화
+
+    > **핵심 개념 및 경험**
+    > - LinkedList를 이용한 Queue 구현
+    > - Queue의 UnitTest 구현
+    > - GCD를 이용한 Concurrency 프로그래밍
+    > - Opaque and Boxed Types을 활용하여 Queue의 추상화
 
 <br>
 
