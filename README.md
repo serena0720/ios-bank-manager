@@ -21,8 +21,11 @@
 *Dear. `UI-App User Customer`*
 
 `Bank`에 업무를 보러 오셨나요?
+
 저희 은행은 `10명`씩 `대기중`에 추가를 해드리고 있습니다!
+
 순서가 되면 `BankClerk`이 순번에 따라 `업무중` 라인에서 호출해드립니다.
+
 잠시만 기다려 주세요~
     
 > **핵심 개념 및 경험**
@@ -76,7 +79,7 @@
 ## 4. 📊 UML & 파일트리
 
 ### UML
-<Img src = "https://github.com/h-suo/codingTest/assets/109963294/2785d477-05a5-481b-8e88-c0a32e1ea1f8" width="700"/>
+<Img src = "https://github.com/h-suo/codingTest/assets/109963294/2785d477-05a5-481b-8e88-c0a32e1ea1f8" width="750"/>
 
 ### 파일트리
 ```
@@ -105,9 +108,9 @@ BankManagerUIApp
 
 | 최초 대기인원 추가 시 | 업무 완료 전 대기인원 추가 시 | 업무 완료 후 대기인원 추가 시 |
 | :--------------: | :-------: |  :-------: | 
-| <Img src = "https://hackmd.io/_uploads/ry6o8Lcc2.gif" width="225"/> | <Img src = "https://hackmd.io/_uploads/ryv2wI9q2.gif" width="225"/>  | <Img src = "https://hackmd.io/_uploads/rk33DU59h.gif" width="225"/>  |
+| <Img src = "https://hackmd.io/_uploads/ry6o8Lcc2.gif" width="230"/> | <Img src = "https://hackmd.io/_uploads/ryv2wI9q2.gif" width="230"/>  | <Img src = "https://hackmd.io/_uploads/rk33DU59h.gif" width="230"/>  |
 | **업무 중 초기화 시** | **업무 완료 후 초기화 시** | **초기화 후 대기인원 추가 시** |
-| <Img src = "https://hackmd.io/_uploads/SysS_U5cn.gif" width="225"/> | <Img src = "https://hackmd.io/_uploads/rJkLuUqq3.gif" width="225"/>  | <Img src = "https://hackmd.io/_uploads/HkRidL9q3.gif" width="225"/>  |
+| <Img src = "https://hackmd.io/_uploads/SysS_U5cn.gif" width="230"/> | <Img src = "https://hackmd.io/_uploads/rJkLuUqq3.gif" width="230"/>  | <Img src = "https://hackmd.io/_uploads/HkRidL9q3.gif" width="230"/>  |
 
 
 <br>
@@ -218,7 +221,7 @@ BankManagerUIApp
 - 화면을 스크롤 시 타이머가 멈추는 문제가 있었습니다. 이는 사용자가 스크롤을 했을 때 RunLoop가 tracking 모드로 바뀌어 타이머가 실행되지 않는 문제였습니다.
 
 ### 🧯 해결방법
-- 이를 해결하기 위해 현재 런루프에 타이머를 .common 모드로 등록하였습니다.
+- 이를 해결하기 위해 현재 런루프에 타이머를 `.common` 모드로 등록하였습니다.
 
 > .common: 하나 이상의 다른 실행 모드를 포함한 모드
 
@@ -244,7 +247,7 @@ RunLoop.current.add(timer, forMode: .common)
 - `swift packmanager`를 사용하여 `customer` 로컬 패키지를 생성하여 활용하는 과정에서 직접 만든 패지를 활용하다보니 새로운 문제에 직면했습니다. 기본적으로 설정되어있는 `internal`을 모듈 외부에서도 사용가능하게 수정해야하는 문제였습니다. 모듈 외부에서 사용 가능하게 하는 접근제어자에는 `public`과 `open`이 있습니다. 이 둘의 차이점을 고려하여 적용하고자 하였습니다.
 
 ### 🧯 해결방법
-- `open`과 `public`은 모두 외부에 개방이 되어 있어 모듈 밖에서 모두 접근이 가능하다는 공통점이 있지만, `open`의 경우 오버라이드, 서브클래싱이 가능하지만 `public`의 경우 오버라이드, 서브클래싱이 불가능합니다. 이러한 차이를 고려을했을 때 정형화된 큐와 `Customer` 객체를 공유하고자 프레임워크를 생성한 저희의 의도에는 `public`이 더 적절하다 생각하여 `public`을 을각 메소드, 프로퍼티별로 추가하였습니다.
+- `open`과 `public`은 모두 외부에 개방이 되어 있어 모듈 밖에서 모두 접근이 가능하다는 공통점이 있지만, `open`의 경우 오버라이드, 서브클래싱이 가능하지만 `public`의 경우 오버라이드, 서브클래싱이 불가능합니다. 이러한 차이를 고려을했을 때 정형화된 큐와 `Customer` 객체를 공유하고자 프레임워크를 생성한 저희의 의도에는 `public`이 더 적절하다 생각하여 `public`을 각 메소드, 프로퍼티별로 추가하였습니다.
     ```swift
     public struct Customer {
         public let waitingNumber: Int
